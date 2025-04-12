@@ -1,38 +1,10 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "next/typescript",
-    "standard",
-    "plugin:tailwindcss/recommended",
-    "prettier"
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": ["import"],
-  "rules": {
-    "import/order": [
-      "error",
-      {
-        "groups": [
-          "builtin",
-          "external",
-          "internal",
-          ["parent", "sibling"],
-          "index",
-          "object"
-        ],
-        "newlines-between": "always",
-        "pathGroups": [
-          {
-            "pattern": "@app/**",
-            "group": "external",
-            "position": "after"
-          }
-        ],
-        "pathGroupsExcludedImportTypes": ["builtin"],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true
-        }
-      }
-    ]
-  }
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "root": true
 }
