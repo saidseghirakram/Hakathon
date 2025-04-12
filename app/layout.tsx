@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import React from "react";
+import Navbar from "./components/Navbar";
 
 import "./globals.css";
 
@@ -17,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Hackathon ",
-  description: "A better version of Stack Overflow.",
+  title: "Akram's Platform",
+  description: "Welcome to my platform",
 };
 
 export default function RootLayout({
@@ -27,10 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900 text-white`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
